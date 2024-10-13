@@ -10,7 +10,11 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"check": "biome check --write ./src"
+		"check": "biome check --write ./src",
+		"prepare": "husky"
+	},
+	"lint-staged": {
+		"**/*.{js,jsx,ts,tsx}": "pnpm run check"
 	},
 	"dependencies": {
 		"next": "14.2.14",
