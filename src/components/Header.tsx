@@ -1,4 +1,4 @@
-import React from "react"; // これを追加
+import React from "react";
 
 export const Header = () => {
 	return (
