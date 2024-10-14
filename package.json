@@ -12,6 +12,7 @@
 		"start": "next start",
 		"check": "biome check --write ./src",
 		"test": "vitest",
+		"test run": "vitest run",
 		"prepare": "husky"
 	},
 	"lint-staged": {
