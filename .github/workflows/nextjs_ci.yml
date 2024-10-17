@@ -16,6 +16,10 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+# リポジトリのリードのみ許可
+permissions:
+  contents: read
+
 jobs:
   CI:
     name: RUN LINT TEST BUILD
