@@ -6,7 +6,7 @@ on:
 
   push:
     branches:
-      - develop
+      - development
 
   #手動実行
   workflow_dispatch:
