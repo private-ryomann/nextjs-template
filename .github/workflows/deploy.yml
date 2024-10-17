@@ -6,6 +6,10 @@ on:
 
   #手動実行
   workflow_dispatch:
+# リポジトリのリードとデプロイ権限のみ許可
+permissions:
+  contents: read
+  deployments: write
 
 jobs:
   DEPLOY:
