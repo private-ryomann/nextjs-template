@@ -1,11 +1,16 @@
 name: Setup Node.js With Pnp
 
-description: "Setup Node.js by using cache and pnpm"
+description: "Setup Node.js By 'Using Cache And pnpm"
 
 inputs:
   working-directory:
-  description: "working-directory of pnpm-lock.yaml"
-  default: "."
+    description: "Working Directory Of pnpm-lock.yaml"
+    required: false
+    default: "."
+
+  node-version:
+    description: "Use Node.js Version"
+    required: true
 
 runs:
   using: "composite"
@@ -16,7 +21,7 @@ runs:
     - name: Setup Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: "20.18.0"
+        node-version: ${{ inputs.node-version }}
         cache: "pnpm"
         cache-dependency-path: "${{ inputs.working-directory }}/pnpm-lock.yaml"
 
