@@ -1,0 +1,26 @@
+name: Setup Node.js With Pnp
+
+description: "Setup Node.js by using cache and pnpm"
+
+inputs:
+  working-directory:
+  description: "working-directory of pnpm-lock.yaml"
+  default: "."
+
+runs:
+  using: "composite"
+  steps:
+    - name: Use Specific Pnpm Version By Corepack
+      run: corepack enable
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: "20.18.0"
+        cache: "pnpm"
+        cache-dependency-path: "${{ inputs.working-directory }}/pnpm-lock.yaml"
+
+    - name: Install Dependencies
+      run: pnpm i --frozen-lockfile
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
