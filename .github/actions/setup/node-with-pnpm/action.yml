@@ -17,6 +17,7 @@ runs:
   steps:
     - name: Use Specific Pnpm Version By Corepack
       run: corepack enable
+      shell: bash
 
     - name: Setup Node.js
       uses: actions/setup-node@v4
