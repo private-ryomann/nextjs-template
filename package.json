@@ -10,9 +10,10 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
+		"lint": "biome lint ./src",
 		"check": "biome check --write ./src",
 		"test": "vitest",
-		"test run": "vitest run",
+		"test not watch": "vitest run",
 		"prepare": "husky"
 	},
 	"lint-staged": {
