@@ -32,3 +32,20 @@ docker-compose build --no-cache
 
 docker-compose up -d
 ```
+
+## huskyによるコミット時自動整形
+huskyとlint-stagedを使用して、commit時にBiomeでLintとFormatを行いコードの品質を保ちます。
+
+## CICD
+GitHubActionsを使用。
+
+**CI**
+- BiomeによるLint
+- VitestによるTest
+- NextjsによるBuild
+
+
+
+**CD**
+- CI
+- Vercelにデプロイ
